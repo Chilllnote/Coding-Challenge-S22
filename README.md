@@ -77,13 +77,19 @@ It seems some of the variables for some of the mushrooms don't *only* have a hig
 
 Forgive me for believing that I was losing my mind (though I didn't mention it, I *was* wondering how I got such a high accuracy), it just seems like the variables, when it comes to the mushrooms, are very strongly correlated. Strong enough, in fact, that accuracy of prediction skyrockets. You can see how this correlation comes about by just scrolling through the data set, in fact:
 
-Stalk-color-above-ring: almost always w\n
-Stalk-color-below-ring: almost always w\n
-Veil-type: almost always p\n
-Veil-color: almost always w\n
-Ring-number: almost always 0\n
-Ring-type: almost always p.\n
-Gill-attachment: almost always f\n
+Stalk-color-above-ring: almost always w
+
+Stalk-color-below-ring: almost always w
+
+Veil-type: almost always p
+
+Veil-color: almost always w
+
+Ring-number: almost always 0
+
+Ring-type: almost always p.
+
+Gill-attachment: almost always f
 
 I’m certain that the multicollinearity comes from the repetitions of variables that can be seen within the set. If you have a stalk color above the ring that is white and a veil-type that is p, you will, with almost full certainty, have a ring-type of p. This collinearity leads to a higher model prediction. Test aren’t done, although, as the dataset has some data that isn’t defined (“left as ‘?’”), so let's fill that data and do one more test.
 
