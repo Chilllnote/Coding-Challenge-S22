@@ -66,3 +66,31 @@ tutorial 2: https://www.kaggle.com/klaudiajankowska/binary-classification-multip
 There were some......Astonishing results 
 
 <img width="631" alt="Screenshot 2022-01-31 020339" src="https://user-images.githubusercontent.com/22717191/151767984-5347968f-7835-4c39-88d5-d8f935cf3ec6.png">
+
+The accuracy was high, ***Too*** high, in fact. As always if the accuracy of a training set is 100% for a majority of models, it should be taken into question. So, I looked into an answer and found one:
+
+“regression techniques involve computing a matrix inversion, which is inaccurate if the determinant is close to 0 (i.e. two or more variables are almost a linear combination of each other)”
+
+It seems some of the variables for some of the mushrooms don't *only* have a high correlation to being either poisonous or edible, but have a high correlation with *each other*, in general. If you want a better explanation imagine you have two variables x and y that both effect a z. If x decreases, z increase. If y increases, z increase. Both variables are linearly correlated with one another so a change in one will have an equal change in the other, either changes, most likely, resulting in z increasing. This is known in statistics as multicollinearity. It’s defined like so: 
+
+"**Multicollinearity** (also collinearity) is a phenomenon in which one predictor variable in a multiple regression model can be linearly predicted from the others with a substantial degree of accuracy."
+
+Forgive me for believing that I was losing my mind (though I didn't mention it, I *was* wondering how I got such a high accuracy), it just seems like the variables, when it comes to the mushrooms, are very strongly correlated. Strong enough, in fact, that accuracy of prediction skyrockets. You can see how this correlation comes about by just scrolling through the data set, in fact:
+
+Stalk-color-above-ring: almost always w
+Stalk-color-below-ring: almost always w
+Veil-type: almost always p
+Veil-color: almost always w
+Ring-number: almost always 0
+Ring-type: almost always p.
+Gill-attachment: almost always f
+
+I’m certain that the multicollinearity comes from the repetitions of variables that can be seen within the set. If you have a stalk color above the ring that is white and a veil-type that is p, you will, with almost full certainty, have a ring-type of p. This collinearity leads to a higher model prediction. Test aren’t done, although, as the dataset has some data that isn’t defined (“left as ‘?’”), so let's fill that data and do one more test.
+
+# Second test
+
+<img width="628" alt="Screenshot 2022-01-31 020339" src="https://user-images.githubusercontent.com/22717191/151768649-94a2b05e-98c3-4a92-9b60-77c60749cbb8.png">
+
+The accuracy took a slight decrease but nothing much has changed (which wasn’t unexpected. All the missing values got filled in by the most frequent letter. I imagine not a lot of change was gonna happen from such a thing.
+
+Either way, use of the Decision Tree, SVM, Quadratic Discriminant, Random Forest, or k-Nearest Neighbors model are recommended for the set. As always, I tested for multiple models to see which one would be the most accurate. 
