@@ -73,7 +73,7 @@ The accuracy was high, ***Too*** high, in fact. As always if the accuracy of a t
 
 It seems some of the variables for some of the mushrooms don't *only* have a high correlation to being either poisonous or edible, but have a high correlation with *each other*, in general. If you want a better explanation imagine you have two variables x and y that both effect a z. If x decreases, z increase. If y increases, z increase. Both variables are linearly correlated with one another so a change in one will have an equal change in the other, either changes, most likely, resulting in z increasing. This is known in statistics as multicollinearity. It’s defined like so: 
 
-"**Multicollinearity** (also collinearity) is a phenomenon in which one predictor variable in a multiple regression model can be linearly predicted from the others with a substantial degree of accuracy."
+"**Multicollinearity** (also collinearity) is a phenomenon in which one predictor variable in a multiple regression model can be linearly predicted from the others with a substantial degree of accuracy." The predictor variable, however, can be *multiple* variables within the set.
 
 Forgive me for believing that I was losing my mind (though I didn't mention it, I *was* wondering how I got such a high accuracy), it just seems like the variables, when it comes to the mushrooms, are very strongly correlated. Strong enough, in fact, that accuracy of prediction skyrockets. You can see how this correlation comes about by just scrolling through the data set, in fact:
 
